@@ -1,4 +1,33 @@
-# Getting Started with Create React App
+# Chạy project bằng yarn nha
+# chức năng từng thư mục
+## common 
+đặt các component dùng chung ở nhiều nơi khác nhau ở đây
+  nên để các component trong từng folder (tốt nhất là để luôn css cho từng conponent ở trong folder luôn)
+reuse logic (hooks)
+
+## style 
+tất nhiên là để file css rồi :>>>
+để những file css dùng chung cho cả chương trình
+
+## config 
+chứa các api link , route config vân vân và mây mây các thể loại config
+
+## page
+chứa các page component và nhưng component chỉ thuộc về page đó 
+
+## redux
+chứa state management :>
+
+hết r :>>
+
+
+
+
+
+
+
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
