@@ -1,0 +1,87 @@
+.popup_edit{
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	background: white;
+	height: 210px;
+	width: 400px;
+	z-index: 99999999;
+	transform: translate(-50%,-50%);
+}
+.active_page a{
+	color:#ff4d00;
+	display: block;
+	width: 100%;
+}
+.active_page{
+	background: var(--primary);
+	text-align: center;
+}
+.pagination_custom li{
+	width: 40px;
+	margin: 0 8px;
+}
+.pre_load_img{
+	animation: example 1.5s infinite;
+	position: absolute;
+	top: 50%;
+	font-size: 1.9rem;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.wrap_pre_img{
+	position: relative;
+}
+@keyframes example {
+  from {transform:rotate(0deg) scale(1,1);
+	opacity: 0.8;
+}
+  to {transform:rotate(360deg) scale(2,2);
+	opacity:1;
+}
+}
+.heading_edit{
+	padding: 4px;
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px dotted #ccc;
+}
+.btn_close{
+	position: absolute;
+	top: 4px;
+	right: 4px;
+	font-size: 1.2rem;
+	color:#272424;
+}
+ #preview img{
+ 	width: 100px;
+ 	opacity: 0.1;
+ }
+ .wrap-preview{
+ 	position :relative;
+ }
+.heading_edit h3{
+	margin: 0px;
+	font-size: 1.4rem;
+}
+.heading_edit i{
+	font-size: 1.4rem;
+}
+.text_edit{
+	padding: 4px;
+	
+}
+.text_edit input{
+	width: 100%;
+	height: 8em;
+}
+.modal_popup_cmt{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 9;
+}

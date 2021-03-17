@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 
 import { Route, Switch } from "react-router-dom";
+import { NotFound } from "../../pages/NotFound/NotFound";
 import Routes from "./RouteConfig";
 
 function GetRoutes() {
@@ -15,8 +16,11 @@ function GetRoutes() {
       <Switch>
         {Routes.map((route, indx) => {
           const { path, component } = route;
-          return <Route key={indx} path={path} exact={true} component={component} />;
+          return (
+            <Route key={indx} path={path} exact={true} component={component} />
+          );
         })}
+        <Route component={NotFound} />
       </Switch>
     </Suspense>
   );
