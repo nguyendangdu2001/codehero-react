@@ -15,20 +15,16 @@ export const Header = (props) => {
               className="header_link"
               to="/"
             >
-              <img src={pic2} />
+              <img src="/img/pic2.png" alt="" />
               <span>
-                <img src={logo} />
+                <img src="/img/Logo.png" alt="" />
               </span>
             </NavLink>
           </div>
           <div className="wrap-header">
             <ul className="header_list hide-on-table-and-moblie">
               <li className="header_item">
-                <NavLink
-                  activeClassName="border-bt"
-                  className="header_link"
-                  to="course"
-                >
+                <NavLink activeClassName="border-bt" className="header_link" to="course">
                   Chương trình đào tạo
                 </NavLink>
 
@@ -37,29 +33,17 @@ export const Header = (props) => {
                 </ul>
               </li>
               <li className="header_item">
-                <NavLink
-                  activeClassName="border-bt"
-                  className="header_link"
-                  to="document"
-                >
+                <NavLink activeClassName="border-bt" className="header_link" to="document">
                   Tài liệu
                 </NavLink>
               </li>
               <li className="header_item ">
-                <NavLink
-                  activeClassName="border-bt"
-                  className="header_link"
-                  to="blog"
-                >
+                <NavLink activeClassName="border-bt" className="header_link" to="blog">
                   Chia sẻ
                 </NavLink>
               </li>
               <li className="header_item ">
-                <NavLink
-                  activeClassName="border-bt"
-                  className="header_link"
-                  to="forum"
-                >
+                <NavLink activeClassName="border-bt" className="header_link" to="forum">
                   Thảo luận
                 </NavLink>
               </li>
@@ -95,10 +79,7 @@ export const Header = (props) => {
           >
             <div status={0} className="notify">
               <span style={{ position: "relative", marginRight: "10px" }}>
-                <i
-                  className="fas fa-bell btn btn-primary"
-                  style={{ fontSize: "1.2rem" }}
-                />
+                <i className="fas fa-bell btn btn-primary" style={{ fontSize: "1.2rem" }} />
                 <span className="badge_notify" />
               </span>
               <div className="div_notify">
@@ -130,10 +111,7 @@ export const Header = (props) => {
               />
               <span></span>
               <div className="dropdown_user">
-                <i
-                  style={{ paddingLeft: "4px" }}
-                  className="fas fa-caret-down"
-                />
+                <i style={{ paddingLeft: "4px" }} className="fas fa-caret-down" />
               </div>
               <div className="div_item">
                 <li className="dropdown_item">
@@ -142,10 +120,7 @@ export const Header = (props) => {
 
                 <li className="dropdown_item"></li>
                 <li className="dropdown_item"></li>
-                <li
-                  style={{ borderBottom: "1px solid #ccc" }}
-                  className="dropdown_item"
-                ></li>
+                <li style={{ borderBottom: "1px solid #ccc" }} className="dropdown_item"></li>
                 <li className="dropdown_item">
                   <a>Đăng xuất</a>
                 </li>

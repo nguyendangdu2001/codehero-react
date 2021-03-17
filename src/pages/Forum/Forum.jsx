@@ -1,12 +1,10 @@
 import React from "react";
-import { useEffect, useState } from "react";
 import ItemForum from "../../common/components/Forum/ItemForum";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useForum from "../../common/hooks/useForum";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 function Forum(props) {
-  const [forums, setforums] = useState([]);
   const [data, query] = useForum();
   const { isLoading, error } = query;
   const alertError = () => {
