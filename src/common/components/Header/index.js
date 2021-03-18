@@ -53,7 +53,7 @@ export const Header = (props) => {
           <ul className="header_btn">
             <li>
               <NavLink
-              to="login"
+                to="login"
                 style={{ outline: "none" }}
                 className="btn btn-primary header_button btn_modal"
               >
@@ -61,18 +61,20 @@ export const Header = (props) => {
               </NavLink>
             </li>
             <li>
-              <button
+              <NavLink 
+                to="signup"
                 style={{ outline: "none" }}
                 className="btn btn-danger header_button btn_modal hide-on-table-and-moblie"
               >
                 Đăng ký
-              </button>
+              </NavLink>
             </li>
           </ul>
 
           <div
             style={{
               marginRight: "3em",
+              marginLeft: "0.5em",
               display: "flex",
               alignItems: "center",
               color: "black",

@@ -55,7 +55,14 @@ export const Footer = (props) => {
                           className="input-search"
                           placeholder="Email Address"
                         />
-                        <button type="submit" className="btn-search">
+                        <button
+                          type="submit"
+                          className="btn-search"
+                          style={{
+                            marginTop: "0.5em",
+                            borderRadius: "5px",
+                          }}
+                        >
                           <span style={{ fontSize: "15px" }}>SUBMIT</span>
                         </button>
                       </form>
