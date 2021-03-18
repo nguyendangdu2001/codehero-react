@@ -52,12 +52,13 @@ export const Header = (props) => {
 
           <ul className="header_btn">
             <li>
-              <button
+              <NavLink
+              to="login"
                 style={{ outline: "none" }}
                 className="btn btn-primary header_button btn_modal"
               >
                 Đăng nhập
-              </button>
+              </NavLink>
             </li>
             <li>
               <button

@@ -4,6 +4,7 @@ import { Footer } from "./common/components/Footer";
 import { ReactQueryDevtools } from "react-query/devtools";
 import GetRoutes from "./config/Route/GetRoutes";
 import Header from "./common/components/Header";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 const queryClient = new QueryClient();
 
@@ -17,7 +18,7 @@ function App() {
       {/* <ScrollToTop /> */}
       {/* <Suspense fallback={null}><ScrollTopButton /></Suspense> */}
       {/* <Suspense fallback={null}>{!auth && <GoogleOneTapSignUp />}</Suspense> */}
-      <ReactQueryDevtools initialIsOpen />
+      {/* <ReactQueryDevtools initialIsOpen /> */}
     </QueryClientProvider>
   );
 }

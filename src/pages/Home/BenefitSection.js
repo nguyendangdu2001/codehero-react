@@ -11,17 +11,17 @@ const BenefitSection = (props) => {
       <br />
       <div className="row">
         <div data-aos="fade-right" className="col-lg-6" style={{ right: "40px" }}>
-          <img src="{{asset('public/images/')}}/" alt="" />
+          <img src="/img/" alt="" />
           <div style={{ display: "flex" }}>
-            <img src="{{asset('public/images/home1.png')}}" className="image_key_section" alt="" />
-            <img src="{{asset('public/images/home2.png')}}" className="image_key_section" alt="" />
+            <img src="/img/home1.png" className="image_key_section" alt="" />
+            <img src="/img/home2.png" className="image_key_section" alt="" />
           </div>
           <div style={{ textAlign: "center" }}>
-            <img src="{{asset('public/images/home3.png')}}" className="image_key_section" alt="" />
+            <img src="/img/home3.png" className="image_key_section" alt="" />
           </div>
           <div style={{ display: "flex" }}>
-            <img src="{{asset('public/images/home4.png')}}" className="image_key_section" alt="" />
-            <img src="{{asset('public/images/home5.png')}}" className="image_key_section" alt="" />
+            <img src="/img/home4.png" className="image_key_section" alt="" />
+            <img src="/img/home5.png" className="image_key_section" alt="" />
           </div>
         </div>
         <div
