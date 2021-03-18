@@ -1,6 +1,6 @@
 ## Hoàng nó quên rằng sau khi bà clone về thì phải chạy
 
-npm install
+npm install hoặc yarn install :>>
 
 # Chạy project bằng yarn nha
 
