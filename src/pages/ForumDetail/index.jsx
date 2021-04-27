@@ -1,29 +1,44 @@
-@extends('welcome')
-@section('title',$data->title_post)
-@section('content')
-<br>
-<br>
-<br>
-<br>
-<div class="modal_popup_cmt hidden">
-    <div class="layer"></div>
-    <div class="popup_edit">
-        <form class="form_edit">
+import React from "react";
+import { useParams } from "react-router";
+import useForumDetail from "../../common/hooks/useForumDetail";
+import { config } from "../../config/api";
+
+const ForumDetail = () => {
+  const { id } = useParams();
+  const { data } = useForumDetail(id);
+  const { name_cate, title_post, content_post, avatar, cover_img } = data || {};
+  return (
+    <div>
+      <div class="modal_popup_cmt hidden">
+        <div class="layer"></div>
+        <div class="popup_edit">
+          <form class="form_edit">
             <div class="heading_edit">
-                <h3>Chỉnh sửa bình luận</h3>
-                <i class="fas fa-times"></i>
+              <h3>Chỉnh sửa bình luận</h3>
+              <i class="fas fa-times"></i>
             </div>
             <div class="text_edit">
-                <input type="text" name="">
+              <input type="text" name="" />
             </div>
-            <div style="display: flex;justify-content: flex-end;padding: 4px;">
-                <input class="btn btn-success text-right" type="submit" value="Sửa" name="">
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "flex-end",
+                padding: 4,
+              }}
+            >
+              <input
+                class="btn btn-success text-right"
+                type="submit"
+                value="Sửa"
+                name=""
+              />
             </div>
-        </form>
-    </div>
-</div>
-<div style="padding: 0" class="container">
-    <?php 
+          </form>
+        </div>
+      </div>
+      <div style={{ padding: 0 }} class="container">
+        {/* <?php 
 	function getLV($level)
 	{
 		$lv='';
@@ -41,91 +56,152 @@
 	?>
     <?php
 	$lv=getLV($data->accessright);
-	?>
-    <input type="hidden" id="title_web" value="{{$data->title_post}}" name="">
-    <div class="row">
-        <div class="col-12">
+	?> */}
+        <input type="hidden" id="title_web" value={title_post} name="" />
+        <div class="row">
+          <div class="col-12">
             <div
-                style="background: url({{asset($data->img_cate)}});background-position: center;background-size: cover;height: 200px;position: relative;">
-                <div style="position: absolute;background: rgba(255,255,255,.4);width: 100%;padding: 2px 8px;"><b><a
-                            href="#">{{$data->name_cate}}</a></b> | <a href="#">Hoạt động</a></div>
+              style={{
+                background: `url(${config.resourse}${cover_img})`,
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+                height: 200,
+                position: "relative",
+              }}
+            >
+              <div
+                style={{
+                  position: "absolute",
+                  background: "rgba(255,255,255,.4)",
+                  width: "100%",
+                  padding: "2px 8px",
+                }}
+              >
+                <b>
+                  <a href="#">{name_cate}</a>
+                </b>{" "}
+                | <a href="#">Hoạt động</a>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-12">
-            <ul class="list_redicrect" style="display: flex;flex-wrap: wrap;">
-                <li><a href="{{URL::to('blog')}}">Forum</a></li>
-                <li><i class="fas fa-angle-right"></i><a href="{{URL::to('blog/thread/'.$data->id_cate)}}">
-                        {{$data->name_cate}}</a> <i class="fas fa-angle-right"></i></li>
-                <li></i><a style="color: #333" href="#"> {{$data->title_post}}</a></li>
+        <div class="row">
+          <div class="col-lg-12">
+            <ul
+              class="list_redicrect"
+              style={{ display: "flex", flexWrap: "wrap" }}
+            >
+              <li>
+                <a href="{{URL::to('blog')}}">Forum</a>
+              </li>
+              <li>
+                <i class="fas fa-angle-right"></i>
+                <a href="{{URL::to('blog/thread/'.$data->id_cate)}}">
+                  {name_cate}
+                </a>{" "}
+                <i class="fas fa-angle-right"></i>
+              </li>
+              <li>
+                <a style={{ color: "#333" }} href="#">
+                  {" "}
+                  {title_post}
+                </a>
+              </li>
             </ul>
-            <br>
-        </div>
+            <br />
+          </div>
 
-        <div class="col-lg-3 col-md-12 col-sm-12 info_post_mobile p-0">
-            <div class="forum_info_auth info_user_post"
-                style="background: url({{asset($data->avatar)}});background-position: center;background-size: cover;border-radius: 50%;">
-            </div>
+          <div class="col-lg-3 col-md-12 col-sm-12 info_post_mobile p-0">
+            <div
+              class="forum_info_auth info_user_post"
+              style={{
+                background: `url(${config.resourse}${avatar})`,
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                borderRadius: "50%",
+              }}
+            ></div>
             <div class="div_level_user">
-                <form method="POST" class="form_user">
-                    {{ csrf_field()}}
-                    <a class="link_user" style="font-weight: 500" status="false" username="{{$data->id}}"
+              <form method="POST" class="form_user">
+                {/* {{ csrf_field()}} */}
+                {/* <a class="link_user" style="font-weight: 500" status="false" username="{{$data->id}}"
                         href="{{URL::to('profile/'.$data->id)}}">{{$data->user}}
 
                         <div class="user_name"></div>
-                    </a>
-                </form>
-                {!!$lv!!}
-                <span class="getTime hide-on-table hidden-on-pc "><i class="far fa-clock"></i>
-                    {{ \Carbon\Carbon::parse($data->time_created)->diffForHumans() }}</span>
+                    </a> */}
+              </form>
+              {/* {!!$lv!!} */}
+              {/* <span class="getTime hide-on-table hidden-on-pc "><i class="far fa-clock"></i>
+                    {{ \Carbon\Carbon::parse($data->time_created)->diffForHumans() }}</span> */}
             </div>
-
-        </div>
-        <div class="col-lg-9 p-0">
+          </div>
+          <div class="col-lg-9 p-0">
             <div
-                style="background: #e2ecf0;border: 5px solid #fff;box-shadow: 1px 2px 3px gray;border-radius: 16px;padding: 4px 8px">
-                <div style="display: flex;justify-content: flex-end;font-size: 0.8rem">
-                    {{-- <span class="getTime">{{$data->created_at->diffForHumans()}}</span> --}}
-                    <span
-                        class="getTime hide-on-mobile">{{ \Carbon\Carbon::parse($data->time_created)->diffForHumans() }}</span>
-                </div>
-                <div class="cmt_forum">
-                    <h3 style="text-transform: uppercase;">{{$data->title_post}}</h3>
-                    <hr>
-                    <div class="content_post">
-                        {!! $data->content_post !!}
-                    </div>
-
-                </div>
-                <div>
-                    <br>
-                    <form onsubmit="return false" action="post">
-                        {{csrf_field()}}
-                        @if(count($user_react))
+              style={{
+                background: "#e2ecf0",
+                border: "5px solid #fff",
+                boxShadow: "1px 2px 3px gray",
+                borderRadius: 16,
+                padding: "4px 8px",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "flex-end",
+                  fonSize: "0.8rem",
+                }}
+              >
+                {/* {{-- <span class="getTime">{{$data->created_at->diffForHumans()}}</span> --}} */}
+                {/* <span
+                        class="getTime hide-on-mobile">{{ \Carbon\Carbon::parse($data->time_created)->diffForHumans() }}</span> */}
+              </div>
+              <div class="cmt_forum">
+                <h3 style={{ textTransform: "uppercase" }}>{title_post}</h3>
+                <hr />
+                <div class="content_post">{content_post}</div>
+              </div>
+              <div>
+                <br />
+                <form onsubmit="return false" action="post">
+                  {/* {{csrf_field()}} */}
+                  {/* @if(count($user_react))
                         <button data-id="{{$data->id_post}}" style="line-height: 1;width: 100px"
                             class="btn btn-primary btn-sm btn_react"><i style="color: red" class="fas fa-heart"></i> Đã
                             thích</button>
                         @else
                         <button data-id="{{$data->id_post}}" style="line-height: 1;width: 100px"
                             class="btn btn-info btn-sm btn_react">Thích</button>
-                        @endif
-                        <span>{!!$allreact!!}</span>
-                    </form>
-                </div>
-                <div class="socials-share" style="display: flex;justify-content: flex-end;margin: 0">
-                    <a class="bg-facebook" href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank"><i
-                            class="fab fa-facebook-f"></i> Share</a>
-                </div>
+                        @endif */}
+                  {/* <span>{!!$allreact!!}</span> */}
+                </form>
+              </div>
+              <div
+                class="socials-share"
+                style={{
+                  display: "flex",
+                  justifyContent: "flex-end",
+                  margin: 0,
+                }}
+              >
+                <a
+                  class="bg-facebook"
+                  href="https://www.facebook.com/sharer/sharer.php?u="
+                  target="_blank"
+                >
+                  <i class="fab fa-facebook-f"></i> Share
+                </a>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-    <hr>
-    <div style="display: flex;justify-content: flex-end;">
-        {!!$allcmt->links()!!}
-    </div>
-    <br>
-    @foreach($allcmt as $key=>$value)
+        <hr />
+        <div style={{ display: "flex", justifyContent: "flex-end" }}>
+          {/* {!!$allcmt->links()!!} */}
+        </div>
+        <br />
+        {/* @foreach($allcmt as $key=>$value)
     <?php
 	$lv=getLV($value->accessright);
 	?>
@@ -158,7 +234,7 @@
             </div>
             <div>
                 {{-- <span><i class="fas fa-signature"></i>{{$value->sign}}</span> --}}
-                <br>
+                <br/>
                 <button style="line-height: 1;width: 80px" class="btn btn-info btn-sm">Like!</button>
             </div>
             <div style="display: flex;justify-content: flex-end;">
@@ -176,7 +252,7 @@
     <?php
 	$lv=getLV($value1->accessright);
 	?>
-    <br>
+    <br/>
     <div style="padding-left: 100px;position: relative;">
         <div class="line_cmt"></div>
         <div class="row">
@@ -203,8 +279,8 @@
                     {!!$value1->content_cmt!!}
                 </div>
                 <div>
-                    {{-- <span><i class="fas fa-signature"></i>{{$value1->sign}}</span> --}}
-                    <br>
+                     {{-- <span><i class="fas fa-signature"></i>{{$value1->sign}}</span> --}}
+                    <br/>
                     <button style="line-height: 1;width: 80px" class="btn btn-info btn-sm">Like!</button>
                 </div>
                 <div style="display: flex;justify-content: flex-end;">
@@ -241,10 +317,9 @@
         </form>
         @endif
     </div>
-    @endforeach
+    @endforeach */}
 
-
-    <form onsubmit="return false">
+        {/* <form onsubmit="return false">
         {{ csrf_field()}}
         @if(Session::get('id'))
         <div class="comment">
@@ -265,7 +340,11 @@
     <br>
     <div style="display: flex;justify-content: flex-end;">
         {!!$allcmt->links()!!}
+    </div> */}
+      </div>
+      <div class="redirect"></div>
     </div>
-</div>
-<div class="redirect"></div>
-@endsection
+  );
+};
+
+export default ForumDetail;

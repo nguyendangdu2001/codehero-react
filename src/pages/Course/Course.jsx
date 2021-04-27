@@ -15,9 +15,10 @@ function Course() {
         <div id="list">
           <section className="list-courses">
             <div className="row">
-              {Object.keys(courses).map((e, v) => {
-                return <ItemCourse cate={e} item={courses[e]} />;
-              })}
+              {courses &&
+                Object.keys(courses).map((e, v) => {
+                  return <ItemCourse cate={e} item={courses[e]} />;
+                })}
             </div>
           </section>
         </div>

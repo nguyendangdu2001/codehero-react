@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
 import { config } from "../../../config/api";
 
 function ItemCourse({ cate, item }) {
@@ -15,13 +16,13 @@ function ItemCourse({ cate, item }) {
             <div className="border_course">
               <div className="wrap-course-item">
                 <div className="course-thumb">
-                  <a href="s" title="s">
+                  <Link to={`/course-detail/${e.id_course}`} title="s">
                     <img
                       style={{ width: "100%", height: "170px" }}
                       src={`${config.resourse}/public/${e.img_course}`}
                       alt="s"
                     />
-                  </a>
+                  </Link>
                   <div className="timeCouter">
                     <span className="time">18:00:00</span>
                   </div>

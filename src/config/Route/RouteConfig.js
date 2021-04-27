@@ -6,6 +6,9 @@ const Document = lazy(() => import("../../pages/Document/Document"));
 const Course = lazy(() => import("../../pages/Course/Course"));
 const Login = lazy(() => import("../../pages/Login/Login"));
 const Signup = lazy(() => import("../../pages/Login/Signup"));
+const CourseDetail = lazy(() => import("../../pages/CourseDetail"));
+const BlogDetail = lazy(() => import("../../pages/BlogDetail"));
+const ForumDetail = lazy(() => import("../../pages/ForumDetail"));
 const Routes = [
   { path: "/course", exact: true, component: Course },
   { path: "/forum", exact: true, component: Forum },
@@ -14,6 +17,9 @@ const Routes = [
   { path: "/", exact: true, component: Home },
   { path: "/login", exact: true, component: Login },
   { path: "/signup", exact: true, component: Signup },
+  { path: "/course-detail/:id", exact: true, component: CourseDetail },
+  { path: "/blog-detail/:id", exact: true, component: BlogDetail },
+  { path: "/forum-detail/:id", exact: true, component: ForumDetail },
 ];
 
 export default Routes;

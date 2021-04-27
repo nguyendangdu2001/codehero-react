@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function ItemForum({ post }) {
   const URL_ASSET = "http://localhost/codehero";
@@ -49,12 +50,14 @@ export default function ItemForum({ post }) {
               </span>
               <span style={{ marginLeft: "8px" }}>{post.created_at}</span>
             </div>
-            <a
+            <Link
+              to={`/forum-detail/${post?.id}`}
               className="link_forum"
               style={{ display: "block", fontSize: "1.1rem" }}
-              href
-            />
-            {post.title_post}
+            >
+              {post.title_post}
+            </Link>
+
             <div
               style={{
                 alignItems: "flex-end",

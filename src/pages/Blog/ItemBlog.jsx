@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { config } from "../../config/api";
 
 export default function ItemBlog({ item }) {
@@ -7,7 +8,7 @@ export default function ItemBlog({ item }) {
       <div className="row">
         <div className="col-lg-8 col-md-12 col-sm-12 col-12">
           <div className="list_blog">
-            {item.map((e, v) => {
+            {item?.map((e, v) => {
               return (
                 <div className="row mb-3">
                   <div className="col-lg-5 col-md-5 col-sm-12 col-12">
@@ -34,7 +35,11 @@ export default function ItemBlog({ item }) {
                       >
                         {e.name}
                       </span>
-                      <a tag="a" className="item_link">
+                      <Link
+                        to={`/blog-detail/${e?.id_blog}`}
+                        tag="a"
+                        className="item_link"
+                      >
                         <h3
                           style={{
                             color: "#333",
@@ -44,7 +49,7 @@ export default function ItemBlog({ item }) {
                         >
                           {e.title_blog}
                         </h3>
-                      </a>
+                      </Link>
                       <span style={{ color: "#333" }} className="item_date">
                         2 Xem
                       </span>
