@@ -6,6 +6,7 @@ import useForum from "../../common/hooks/useForum";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 function Forum(props) {
   const [data, query] = useForum();
+
   const { isLoading, error } = query;
   const alertError = () => {
     toast.error("Lỗi khi tải trang, vui lòng thủ lại sau", {
@@ -48,7 +49,7 @@ function Forum(props) {
   return (
     <div className="container">
       {data &&
-        data.data.data.map((post) => (
+        data.map((post) => (
           <>
             <ItemForum post={post}></ItemForum>
           </>

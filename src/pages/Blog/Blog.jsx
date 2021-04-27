@@ -1,9 +1,13 @@
 import React from "react";
-
+import { useBlog } from "../../common/hooks/useBlog";
+import ItemBlog from "./ItemBlog";
 function Blog() {
+  const [blog, stt] = useBlog();
+
+  console.log(blog);
   return (
     <div>
-      <h1>Welcome to Blog | Goto src/pages/Blog/Blog.jsx to edit </h1>
+      <ItemBlog item={blog} />
     </div>
   );
 }

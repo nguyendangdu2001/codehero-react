@@ -8,12 +8,12 @@ export default function ItemForum({ post }) {
         <div
           className="item_forum"
           style={{
+            background: post.color_cate,
             display: "flex",
             padding: "10px 0",
             margin: "10px 0",
             borderTopLeftRadius: "20px",
             borderBottomRightRadius: "20px",
-            background: post.color_cate,
           }}
         >
           <div

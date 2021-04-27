@@ -14,7 +14,11 @@ function Course() {
       <div className="container mobile-container" style={{ padding: 0 }}>
         <div id="list">
           <section className="list-courses">
-            <div className="row">{rows}</div>
+            <div className="row">
+              {Object.keys(courses).map((e, v) => {
+                return <ItemCourse cate={e} item={courses[e]} />;
+              })}
+            </div>
           </section>
         </div>
       </div>
