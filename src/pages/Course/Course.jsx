@@ -1,9 +1,11 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import ItemCourse from "../../common/components/Course/ItemCourse";
 import { useCourses } from "../../common/hooks/useCourse";
 
 function Course() {
   const [courses, stt] = useCourses();
+
   let rows = [];
   console.log(courses);
   // courses.map((i) => {

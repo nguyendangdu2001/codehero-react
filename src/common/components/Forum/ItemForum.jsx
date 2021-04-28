@@ -9,7 +9,7 @@ export default function ItemForum({ post }) {
         <div
           className="item_forum"
           style={{
-            background: post.color_cate,
+            background: post?.bgcolor,
             display: "flex",
             padding: "10px 0",
             margin: "10px 0",
@@ -39,14 +39,15 @@ export default function ItemForum({ post }) {
             <div style={{ display: "flex", fontSize: ".8rem" }}>
               <span
                 style={{
+                  background: `${post?.color_cate}`,
                   display: "block",
-                  background: "",
+
                   padding: "0 4px",
                   borderRadius: "10px",
                   color: "white",
                 }}
               >
-                {post.user}
+                {post?.name_cate}
               </span>
               <span style={{ marginLeft: "8px" }}>{post.created_at}</span>
             </div>

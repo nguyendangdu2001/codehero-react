@@ -30,7 +30,7 @@ export default function ItemBlog({ item }) {
                   <div className="col-lg-7 col-md-7 col-sm-12 col-12">
                     <div>
                       <span
-                        //   style="{backgroundColor:value.color_cate}"
+                        style={{ backgroundColor: `${e?.color_cate}` }}
                         className="blog_cate"
                       >
                         {e.name}
@@ -74,9 +74,10 @@ export default function ItemBlog({ item }) {
         <div className="col-md-4 col">
           <div className="hide-on-table-and-moblie">
             <img
-              src="public/images/banner7.png"
+              src={`${config.resourse}/public/images/banner7.png`}
               style={{ width: "16em", marginLeft: "7em" }}
               className="banner_shadow"
+              alt=""
             />
           </div>
         </div>

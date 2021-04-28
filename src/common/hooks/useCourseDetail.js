@@ -5,6 +5,6 @@ Axios.defaults.timeout = 10000;
 export const useCourseDetail = (id) => {
   return useQuery(["course", { id }], async () => {
     const { data } = await Axios.get(`${config.apiSeverRails}/courses/${id}`);
-    return data?.[0];
+    return data;
   });
 };

@@ -1,18 +1,27 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { useParams } from "react-router";
+import useBuyCourse from "../../common/hooks/useBuyCourse";
 import { useCourseDetail } from "../../common/hooks/useCourseDetail";
 import { config } from "../../config/api";
 
 const CourseDetail = () => {
   const { id } = useParams();
-
+  const auth = useSelector((state) => state?.userStatus?.auth);
+  const { mutate: buyCourse } = useBuyCourse();
   const { data } = useCourseDetail(id);
   //   const coin = 0;
-  const { coin, total_star, title_course, desc_course, img_course } =
-    data || {};
+  const {
+    coin,
+    total_star,
+    title_course,
+    desc_course,
+    img_course,
+    id_course: courseId,
+  } = data?.[0] || {};
 
   return (
-    <div>
+    <div className="" style={{ marginTop: 60 }}>
       <div class="layout hidden">
         <div class="comment_rate">
           <div class="effect hidden">
@@ -69,12 +78,9 @@ const CourseDetail = () => {
                             {/* @if(isset($bought))
 											<button class="btn btn-success btn-sm"><i class="fas fa-check"></i> Đã đăng ký</button>
 											@else */}
-                            <form
-                              id="buy_course"
-                              method="post"
-                              onsubmit="return false"
-                            >
+                            <div>
                               {/* {{csrf_field()}} */}
+
                               <input
                                 style={{
                                   zIndex: 99999999,
@@ -83,8 +89,11 @@ const CourseDetail = () => {
                                 id="btn_buy"
                                 type="submit"
                                 class="user-register btn btn-primary course-register"
-                                value="Đăng ký ngay"
+                                value={auth ? "Mua ngay" : "Đăng ký ngay"}
                                 name=""
+                                onClick={() => {
+                                  if (auth || !data?.[2]) buyCourse(courseId);
+                                }}
                               />
                               <input
                                 id="id_course"
@@ -93,7 +102,7 @@ const CourseDetail = () => {
                                 name=""
                               />
                               <span id="rs_buy"></span>
-                            </form>
+                            </div>
                             {/* @endif */}
                           </div>
                           <div class="main-info">
