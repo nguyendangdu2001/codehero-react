@@ -89,7 +89,9 @@ const CourseDetail = () => {
                                 id="btn_buy"
                                 type="submit"
                                 class="user-register btn btn-primary course-register"
-                                value={auth ? "Mua ngay" : "Đăng ký ngay"}
+                                value={
+                                  auth && data?.[1] ? "Mua ngay" : "Đã mua"
+                                }
                                 name=""
                                 onClick={() => {
                                   if (auth || !data?.[2]) buyCourse(courseId);

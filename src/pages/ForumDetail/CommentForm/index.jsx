@@ -8,6 +8,7 @@ const CommentForm = ({ id_forum }) => {
   const { register, handleSubmit } = useForm();
   const { mutate: createComment } = useCreateComment();
   const submit = ({ content_cmt }) => {
+    console.log(content_cmt);
     createComment({ content_cmt, id_forum });
   };
   const user = useSelector((state) => state?.userStatus?.userInfo);

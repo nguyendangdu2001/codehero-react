@@ -6,13 +6,14 @@ import { config } from "../../config/api";
 export const loginAction = (loginData, cb) => async (dispatch) => {
   dispatch({ type: userConstants.USER_LOGIN_REQUEST });
   try {
-    const { data } = await axios.get(`${config.apiSeverRails}login`);
+    const { data } = await axios.post(`${config.apiSeverRails}login`);
+    console.log(data?.[0]);
     dispatch({
       type: userConstants.USER_LOGIN_SUCCESS,
       payload: { ...data?.[0] },
     });
     Cookies.set("userInfo", JSON.stringify(data?.[0]));
-    cb?.(data?.user?.role);
+    cb?.(data.user?.role);
   } catch (error) {
     console.log(error);
     dispatch({

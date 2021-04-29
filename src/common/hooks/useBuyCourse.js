@@ -9,7 +9,7 @@ const useBuyCourse = () => {
   const dispatch = useDispatch();
   return useMutation(
     async (id) => {
-      const { data } = await axios.post(`${config.apiSeverRails}course`, {
+      const { data } = await axios.post(`${config.apiSeverRails}courses`, {
         course: id,
       });
       return data;
@@ -18,7 +18,7 @@ const useBuyCourse = () => {
       onMutate: () => {},
       onSuccess: (user) => {},
       onSettled: (_, __, id) => {
-        qc.invalidateQueries(["course", { id }]);
+        qc.invalidateQueries(["courses", { id }]);
       },
     }
   );

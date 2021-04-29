@@ -31,8 +31,8 @@ function Login() {
                 <div className="form-group">
                   <label>Email</label>
                   <input
-                    {...register("email")}
-                    type="email"
+                    {...register("username")}
+                    type="text"
                     className="form-control"
                     placeholder="Enter email"
                   />

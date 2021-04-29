@@ -22,7 +22,12 @@ const userReducer = (state = userReducerDefaultState, action) => {
       return { ...state, loading: true };
     case Constants.USER_LOGIN_SUCCESS:
     case Constants.USER_SIGNUP_SUCCESS:
-      return { ...state, auth: true, loading: false, userInfo: action.payload };
+      return {
+        ...state,
+        auth: true,
+        loading: false,
+        userInfo: action.payload,
+      };
     case Constants.USER_LOGIN_ERROR:
     case Constants.USER_SIGNUP_ERROR:
       return { ...state, auth: false, loading: false, error: action.payload };
@@ -30,7 +35,10 @@ const userReducer = (state = userReducerDefaultState, action) => {
     case Constants.USER_LOGOUT_ERROR:
       return { ...state, auth: false };
     case Constants.USER_ADD_CART_ITEM:
-      return { ...state, userInfo: { ...state.userInfo, cart: action.payload } };
+      return {
+        ...state,
+        userInfo: { ...state.userInfo, cart: action.payload },
+      };
     default:
       return state;
   }

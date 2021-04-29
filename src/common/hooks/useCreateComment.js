@@ -19,7 +19,10 @@ const useCreateComment = () => {
       onMutate: () => {},
       onSuccess: (user) => {},
       onSettled: (_, __, { id_forum: id }) => {
-        qc.invalidateQueries(["blog", "comments", { id }], { exact: true });
+        console.log("id ne " + id);
+        qc.invalidateQueries(["forum", "comments", { id }], {
+          // exact: true,
+        });
       },
     }
   );
