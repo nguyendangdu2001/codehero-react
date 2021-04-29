@@ -19,7 +19,7 @@ const CourseDetail = () => {
     img_course,
     id_course: courseId,
   } = data?.[0] || {};
-
+  const buyed = data?.[2];
   return (
     <div className="" style={{ marginTop: 60 }}>
       <div class="layout hidden">
@@ -90,7 +90,7 @@ const CourseDetail = () => {
                                 type="submit"
                                 class="user-register btn btn-primary course-register"
                                 value={
-                                  auth && data?.[1] ? "Mua ngay" : "Đã mua"
+                                  auth && data?.[2] ? "Đã mua" : "Mua ngay"
                                 }
                                 name=""
                                 onClick={() => {
@@ -201,50 +201,6 @@ const CourseDetail = () => {
                         </a>
                       </li>
                     </ul>
-                    {/* @if(isset($bought))
-								<div class="container">
-									<h3 id="title_course" style="margin-top: 7em"></h3>
-									<div class="row">
-										<div class="col-lg-9">
-											<div style="height: 480px">
-												<iframe width="100%" height="480" src="https://www.youtube.com/embed/Vg25AFBl3B8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" id="ytb" allowfullscreen></iframe>
-											</div>
-										</div>
-										<div class="col-lg-3">
-											<div style="border: 1px solid black; border-radius: 3px">
-												<div class="heading_lesson" style="">Danh sách bài học</div>
-												<ul class="list_lesson">
-													@foreach($lessons as $key=>$value)
-														<li class="item_lesson"><a class="link_lesson" data-title="{{$value->title_lesson}}" href="javascript:void()" class="link_lesson" data-href="{{$value->url_lesson}}">{{$value->title_lesson}}</a></li>
-													@endforeach
-												</ul>
-											</div>
-										</div>
-									</div>
-									<h3>Đánh giá khóa học này?</h3>
-									<div style="cursor: pointer;">
-										<i class="fa fa-star icon-star" data-index="0" title="Tệ"></i>
-										<i class="fa fa-star icon-star" data-index="1" title="Bình thường"></i>
-										<i class="fa fa-star icon-star" data-index="2" title="Khá"></i>
-										<i class="fa fa-star icon-star" data-index="3" title="Tốt"></i>
-										<i class="fa fa-star icon-star" data-index="4" title="Tuyệt vời!"></i>
-									</div>
-									<div class="cmt_rate hidden">
-										<form onsubmit="return false">
-											<div class="comment">
-												<div class="info_cmt">
-													<img class="img_cmt" src="{{asset(Session::get('img'))}}" alt="">
-													<h3 class="name_auth">{{Session::get('name')}}</h3>
-												</div>
-												{{csrf_field()}}
-												<input class="input_cmt" placeholder="Nhập để đánh giá" name="cmt" id="rate_input">
-											</div>
-											<div class="btn_cmt">
-												<input class="btn btn-primary" data-id="{{$course_detail['id_course']}}" id="btn_rate" type="submit" value="Đánh giá">
-											</div>
-										</form>
-									</div>
-								@endif */}
                   </div>
                 </div>
               </div>

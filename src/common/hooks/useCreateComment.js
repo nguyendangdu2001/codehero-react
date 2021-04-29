@@ -20,9 +20,8 @@ const useCreateComment = () => {
       onSuccess: (user) => {},
       onSettled: (_, __, { id_forum: id }) => {
         console.log("id ne " + id);
-        qc.invalidateQueries(["forum", "comments", { id }], {
-          // exact: true,
-        });
+        console.log(["forum", "comments", { id }]);
+        qc.invalidateQueries(["forum", "comments"]);
       },
     }
   );

@@ -4,7 +4,7 @@ import { useMutation, useQueryClient } from "react-query";
 
 import { config } from "../../config/api";
 
-const useBuyCourse = () => {
+const useCreateForum = () => {
   const qc = useQueryClient();
 
   return useMutation(
@@ -22,4 +22,4 @@ const useBuyCourse = () => {
   );
 };
 
-export default useBuyCourse;
+export default useCreateForum;

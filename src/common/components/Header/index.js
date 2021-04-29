@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import pic2 from "../../../assets/img/pic2.png";
 import logo from "../../../assets/img/Logo.png";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 export const Header = (props) => {
+  const auth = useSelector((state) => state?.userStatus?.auth);
   return (
     <nav className="header ">
       <div id="progress_bar"></div>
@@ -64,27 +66,28 @@ export const Header = (props) => {
             </li>
           </ul>
         </div>
-
-        <ul className="header_btn">
-          <li>
-            <NavLink
-              to="/login"
-              style={{ outline: "none" }}
-              className="btn btn-primary header_button btn_modal"
-            >
-              Đăng nhập
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/signup"
-              style={{ outline: "none" }}
-              className="btn btn-danger header_button btn_modal hide-on-table-and-moblie"
-            >
-              Đăng ký
-            </NavLink>
-          </li>
-        </ul>
+        {!auth && (
+          <ul className="header_btn">
+            <li>
+              <NavLink
+                to="/login"
+                style={{ outline: "none" }}
+                className="btn btn-primary header_button btn_modal"
+              >
+                Đăng nhập
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/signup"
+                style={{ outline: "none" }}
+                className="btn btn-danger header_button btn_modal hide-on-table-and-moblie"
+              >
+                Đăng ký
+              </NavLink>
+            </li>
+          </ul>
+        )}
 
         <div
           style={{

@@ -4,6 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useForum from "../../common/hooks/useForum";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import { Link } from "react-router-dom";
 function Forum(props) {
   const [data, query] = useForum();
 
@@ -48,6 +49,7 @@ function Forum(props) {
 
   return (
     <div className="container">
+      <Link to="/create-forum">Tạo bài viết</Link>
       {data &&
         data.map((post) => (
           <>
