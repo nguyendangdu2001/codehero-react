@@ -27,7 +27,7 @@ const ListLesson = ({ lesson }) => {
               <ul className="list_lesson">
                 {lesson?.map((v) => (
                   <li className="item_lesson">
-                    <a className="link_lesson">{v?.lesson}</a>
+                    <a className="link_lesson">{v?.title_lesson}</a>
                   </li>
                 ))}
               </ul>

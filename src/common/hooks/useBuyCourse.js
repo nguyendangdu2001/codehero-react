@@ -18,7 +18,7 @@ const useBuyCourse = () => {
       onMutate: () => {},
       onSuccess: (user) => {},
       onSettled: (_, __, id) => {
-        qc.invalidateQueries(["courses", { id }]);
+        qc.invalidateQueries(["courses"]);
       },
     }
   );

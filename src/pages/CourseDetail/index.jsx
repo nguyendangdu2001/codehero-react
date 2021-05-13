@@ -4,6 +4,7 @@ import { useParams } from "react-router";
 import useBuyCourse from "../../common/hooks/useBuyCourse";
 import { useCourseDetail } from "../../common/hooks/useCourseDetail";
 import { config } from "../../config/api";
+import ListLesson from "./ListLesson";
 
 const CourseDetail = () => {
   const { id } = useParams();
@@ -203,6 +204,7 @@ const CourseDetail = () => {
                     </ul>
                   </div>
                 </div>
+                {data?.[2] && <ListLesson lesson={data?.[1]} />}
               </div>
             </div>
           </div>
