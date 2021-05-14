@@ -21,7 +21,6 @@ const CommentForm = ({ id_forum }) => {
             src={`${config.resourse}${user?.avatar}`}
             alt=""
           />
-          {/* <h3 class="name_auth">{{Session::get('name')}}</h3> */}
         </div>
         <input
           class="input_cmt"

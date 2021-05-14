@@ -4,10 +4,11 @@ import ItemBlog from "./ItemBlog";
 function Blog() {
   const [blog, stt] = useBlog();
 
-  console.log(blog);
   return (
     <div>
-      <ItemBlog item={blog} />
+      <div>
+        <ItemBlog item={blog} />
+      </div>
     </div>
   );
 }

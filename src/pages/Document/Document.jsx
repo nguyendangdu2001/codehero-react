@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 import { useDocuments } from "../../common/hooks/useDocuments";
 import { useViewDoc } from "../../common/hooks/useViewDoc";
 import ItemDocument from "./ItemDocument";

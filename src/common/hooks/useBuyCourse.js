@@ -1,12 +1,10 @@
 import axios from "axios";
-import React from "react";
 import { useMutation, useQueryClient } from "react-query";
-import { useDispatch } from "react-redux";
 import { config } from "../../config/api";
 
 const useBuyCourse = () => {
   const qc = useQueryClient();
-  const dispatch = useDispatch();
+
   return useMutation(
     async (id) => {
       const { data } = await axios.post(`${config.apiSeverRails}courses`, {
@@ -18,7 +16,7 @@ const useBuyCourse = () => {
       onMutate: () => {},
       onSuccess: (user) => {},
       onSettled: (_, __, id) => {
-        qc.invalidateQueries(["courses"]);
+        qc.invalidateQueries(["course", id?.toString()]);
       },
     }
   );

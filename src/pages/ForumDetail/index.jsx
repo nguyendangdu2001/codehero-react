@@ -117,17 +117,7 @@ const ForumDetail = () => {
               }}
             ></div>
             <div class="div_level_user">
-              <form method="POST" class="form_user">
-                {/* {{ csrf_field()}} */}
-                {/* <a class="link_user" style="font-weight: 500" status="false" username="{{$data->id}}"
-                        href="{{URL::to('profile/'.$data->id)}}">{{$data->user}}
-
-                        <div class="user_name"></div>
-                    </a> */}
-              </form>
-              {/* {!!$lv!!} */}
-              {/* <span class="getTime hide-on-table hidden-on-pc "><i class="far fa-clock"></i>
-                    {{ \Carbon\Carbon::parse($data->time_created)->diffForHumans() }}</span> */}
+              <form method="POST" class="form_user"></form>
             </div>
           </div>
           <div class="col-lg-9 p-0">
@@ -146,11 +136,7 @@ const ForumDetail = () => {
                   justifyContent: "flex-end",
                   fonSize: "0.8rem",
                 }}
-              >
-                {/* {{-- <span class="getTime">{{$data->created_at->diffForHumans()}}</span> --}} */}
-                {/* <span
-                        class="getTime hide-on-mobile">{{ \Carbon\Carbon::parse($data->time_created)->diffForHumans() }}</span> */}
-              </div>
+              ></div>
               <div class="cmt_forum">
                 <h3 style={{ textTransform: "uppercase" }}>{title_post}</h3>
                 <hr />
@@ -161,18 +147,7 @@ const ForumDetail = () => {
               </div>
               <div>
                 <br />
-                <form onsubmit="return false" action="post">
-                  {/* {{csrf_field()}} */}
-                  {/* @if(count($user_react))
-                        <button data-id="{{$data->id_post}}" style="line-height: 1;width: 100px"
-                            class="btn btn-primary btn-sm btn_react"><i style="color: red" class="fas fa-heart"></i> Đã
-                            thích</button>
-                        @else
-                        <button data-id="{{$data->id_post}}" style="line-height: 1;width: 100px"
-                            class="btn btn-info btn-sm btn_react">Thích</button>
-                        @endif */}
-                  {/* <span>{!!$allreact!!}</span> */}
-                </form>
+                <form onsubmit="return false" action="post"></form>
               </div>
               <div
                 class="socials-share"
@@ -194,9 +169,7 @@ const ForumDetail = () => {
           </div>
         </div>
         <hr />
-        <div style={{ display: "flex", justifyContent: "flex-end" }}>
-          {/* {!!$allcmt->links()!!} */}
-        </div>
+        <div style={{ display: "flex", justifyContent: "flex-end" }}></div>
         <br />
         {comments?.map((comment) => (
           <div className="row mb-3">
@@ -262,21 +235,6 @@ const ForumDetail = () => {
                 </button>
               </div>
               <div style={{ display: "flex", justifyContent: "flex-end" }}>
-                {/* @if(Session::get('id')==$value-&gt;id_auth ||
-                Session::get('id')==$data-&gt;id)
-                <i
-                  title="Xóa"
-                  style={{ margin: "0 8px" }}
-                  data-id="{{$value->id_cmt}}"
-                  className="far fa-trash-alt del_cmt"
-                />
-                <i
-                  title="Sửa"
-                  style={{ margin: "0 8px" }}
-                  data-id="{{$value->id_cmt}}"
-                  className="fas fa-edit edit_cmt"
-                />
-                @endif */}
                 <i title="Báo cáo" className="fas fa-exclamation-triangle" />
                 <i
                   data-id-0="{{$value->id_cmt}}"

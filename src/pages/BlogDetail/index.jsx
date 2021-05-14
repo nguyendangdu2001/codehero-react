@@ -15,11 +15,6 @@ const BlogDetail = () => {
     img_blog,
     tag_blog,
   } = data || {};
-  //   const displayname = 0;
-  //   const view_blog = 0;
-  //   const title_blog = 0;
-  //   const content_blog = 0;
-
   return (
     <div>
       <div id="layout-main" class="group">
@@ -33,11 +28,6 @@ const BlogDetail = () => {
                       <div class="wrapper">
                         <div class="row author">
                           <div class="col-sm-7 text-left">
-                            {/* <?php
-												$id_blog = $data->id_blog;
-												$time_up= $data->created_at;
-												$url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-											?> */}
                             <span>Tác giả</span>
                             <img
                               class="img_auth"
@@ -95,12 +85,6 @@ const BlogDetail = () => {
                                 {v}
                               </a>
                             ))}
-                            {/* <?php
-                                                $tags= explode(';',$data->tag_blog);
-                                                for ($i=0; $i <count($tags) ; $i++) { 
-                                                    echo '<a href="#" class="tag-list" title="'.$tags[$i].'">'.$tags[$i].'</a>';
-                                                }
-                                                ?> */}
                           </div>
                           <div class="col-sm-6 text-right socials-share">
                             <a
@@ -189,91 +173,8 @@ const BlogDetail = () => {
                                 <div class="total-comments-section">
                                   <span id="total-comments">0</span> Bình luận
                                 </div>
-                                <div class="top-level-comment-input">
-                                  {/* <form onsubmit="return false">
-																{{ csrf_field()}}
-																	@if(Session::get('id'))
-																			<div class="comment">
-																				<div class="user-avatar">
-																				
-																					<img style="width: 100%" class="avatars" src="{{asset(Session::get('img'))}}" alt="">
-																					<h3 class="name_auth">{{Session::get('name')}}</h3>
-																				</div>
-																				<div class="edit-box comment-box">
-																					<textarea placeholder="Viết bình luận của bạn" class="with-placeholder" name="cmt" id="cmt_input"></textarea>                                 
-																						<div class="waiting-indicator">
-																							<span class="glyphicon glyphicon-refresh"></span>
-                                                                                        </div>
-                                                                                        <input class="submit-cmmt btn btn-success" title="Đăng" data-id="{{$id_blog}}" id="cmt_blog" type="submit" value="Bình luận"/>
-                                                                                </div>
-                                                                            </div>
-																			<div class="comment-message" id="top-comment-message"></div>
-																	@else
-																		<h3 left_cmt>Đăng nhập để bình luận</h3>
-                                                                    @endif
-															</form> */}
-                                </div>
-                                <div>
-                                  {/* <!-- chỗ này bà cần coi lại nhé, mở ra nó bị thiếu thẻ đóng -->
-															<!-- <div class="comment-block" style="display: block;">
-																@foreach($cmts as $key =>$value)
-																<div class="div_comment" style="margin: 20px 0;">
-																	<div class="user-avatar">
-																		<div class="avatars">
-																			<img class="avatars" src="{{asset($value->avatar)}}" alt="">																
-																		</div>
-																	</div>
-																	<div class="comment-main">
-                                                                		<div class="comment-user">
-																			<a href="#" class="href-user">{{$value->displayname}}</a>
-																			<span class="modified-time">{{$value->updated_at}}</span>
-																		</div>
-																		<span class="comment-content">{{$value->content_cmt}}</span>
-																		<div class="comment-message for-edit error"></div>                         
-																			<div class="view-more">Xem thêm</div>                         
-																			<div class="comment-footer">                           
-																				<div class="left-parts action-buttons">
-																					<span class="hide-message">Bình luận này đã bị ẩn </span>
-																					<div class="user-action-buttons">
-																						<span class="likeButton">
-																							<img src="../../../../img/Like.svg" class="up" id="img_1903053"> 
-																							<span id="countVoteLike_1903053" class="count-vote"> 0</span>
-																						</span>
-																						<span class="disLikeButton">
-																							<img src="../../../../img/dislike.svg" class="down" id="imgDisLike_1903053">
-																							<span id="countVoteDisLike_1903053" class="count-vote"> 0</span> 
-																						</span>
-																						<span class="footer-button reply-button">
-																							<img src="../../../../img/reply.svg" class="reply-img">Trả lời
-																						</span>
-																					</div>
-																					<span class="big-dot">●</span>
-																					<span class="footer-button hide-button">Ẩn</span>
-																					<span class="big-dot">●</span>
-																					<span class="footer-button edit-button">Sửa</span>
-																					<span class="big-dot">●</span>
-																					<span class="footer-button delete-button">Xoá</span>
-																				</div>                           
-																				<div class="right-parts">
-																					<button class="btn btn-success standard-button save-button" style="display: none;">Lưu</button> 
-																				</div>                        
-																			</div>                         
-																			<div class="replies"></div>                         
-																			<div class="edit-box reply-box" style="display: none;">                           
-																				<div placeholder="Viết bình luận của bạn" class="with-placeholder" id="comment-box" contenteditable="">
-                                                                                </div>  
-																				<div class="waiting-indicator">
-																					<span class="glyphicon glyphicon-refresh"></span>
-																				</div>
-																				<a href="#" class="submit-cmmt btn" title="Đăng"> Đăng</a>
-																			</div>                         
-																			<div class="comment-message"></div>                       
-																		</div>                                                                            
-																	</div>
-																</div>
-																@endforeach */}
-                                  {/* </div> */}
-                                </div>
+                                <div class="top-level-comment-input"></div>
+                                <div></div>
                               </div>
                             </div>
                           </div>
@@ -281,58 +182,6 @@ const BlogDetail = () => {
                       </div>
                       <div class="related-items">
                         <b class="related">Bài viết liên quan</b>
-                        {/* @foreach($next_blog as $k=>$v)
-                                                    <div id="related-items" class="list">
-                                                        <div class="item">
-                                                            <div class="row">
-                                                                <div class="col-sm-3 image">
-                                                                    <a href="#">
-                                                                        <img src="{{asset('public'.$v->img_blog)}}" alt="{{$v->title_blog}}">
-                                                                    </a>
-                                                                </div>
-                                                                <div class="col-sm-9 info">
-                                                                    <div class="top">
-                                                                        <h3>
-                                                                            <a title="{{$v->title_blog}}" href="{{$v->id_blog}}">{{$v->title_blog}}</a>
-                                                                        </h3>
-                                                                        <div class="user-rating pull-right">
-                                                                            <div class="user-rating">
-                                                                                <span class="star-rating">
-                                                                                    <span style="width:80.0%"></span>
-                                                                                </span>
-                                                                            </div>
-                                                                        </div>
-                                                                        
-                                                                    </div>
-                                                                    <div class="bottom">
-                                                                        <div class="row tag-list">
-                                                                            <div class="col-md-12 tag-scroll">
-                                                                            <?php
-                                                                            $tags= explode(';',$v->tag_blog);
-                                                                            for ($i=0; $i <count($tags) ; $i++) { 
-                                                                                echo '<span><a href="#">'.$tags[$i].'</a></span>';
-                                                                            }
-                                                                            ?>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="author">
-                                                                            <span>Tác giả:</span>
-                                                                            <a title="" href="#">
-                                                                                <span class="author-name">Boman</span>
-                                                                            </a>
-                                                                            <span class="time-icon"><i class="fa fa-circle"></i></span>
-                                                                            <span class="time">{{$v->updated_at}}</span>
-                                                                            <span class="comment-icon"><i class="fa fa-eye"></i></span>
-                                                                            <span class="comment-text total-view">553</span>
-                                                                            <span class="comment-icon"><i class="fa fa-share-alt"></i></span>
-                                                                            <span class="comment-text">5</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                @endforeach */}
                       </div>
                     </div>
 
@@ -402,16 +251,6 @@ const BlogDetail = () => {
                       </div>
                       <div class="block related-owner">
                         <h3>Bài viết cùng tác giả</h3>
-                        {/* @foreach($refer_blog as $key=>$value)
-                                                    <div class="list-items">
-                                                        <div class="item">
-                                                            <a href=" {{$value->id_blog}}" title=" {{ $value->title_blog}}">
-                                                                <img src="{{asset('public'.$value->img_blog)}}" alt=" {{ $value->title_blog}}">
-                                                            </a>
-                                                            <a title="{{$data->title_blog}}" href=" {{$value->id_blog}}"> {{ $value->title_blog}}</a>
-                                                        </div>
-                                                    </div>                                  
-                                                @endforeach */}
                       </div>
                     </div>
                   </div>

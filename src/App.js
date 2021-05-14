@@ -15,10 +15,8 @@ function App() {
       <Header />
       <GetRoutes />
       <Footer />
-      {/* <ScrollToTop /> */}
-      {/* <Suspense fallback={null}><ScrollTopButton /></Suspense> */}
-      {/* <Suspense fallback={null}>{!auth && <GoogleOneTapSignUp />}</Suspense> */}
-      {/* <ReactQueryDevtools initialIsOpen /> */}
+
+      <ReactQueryDevtools initialIsOpen />
     </QueryClientProvider>
   );
 }
